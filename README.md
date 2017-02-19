@@ -4,7 +4,7 @@
 
 Skull
 =====
-A fast to start, easy to maintain, high productive serving framework<br>
+A fast to start, easy to maintain, highly productive serving framework<br>
 
 Mailing list: skull-engine@googlegroups.com
 
@@ -39,17 +39,18 @@ Skull provides the following key features:
 * Integrated with _Nginx_
 * Service Shareable
 
-It's based on [Google Protobuf][3] and [Flibs][4], target to _Linux_ platform. _Skull_ is consist of 3 components: **skull-core**, **skull-user-api** and **skull-project-management-scripts**, and there are 3 major concepts in _Skull_: **Workflow**, **Module** and **Service**. Before using it, let's understand the core concepts first.
+It's based on [Google Protobuf][3] and [Flibs][4], target to _Linux_ platform. _Skull_ consists of 3 components: **skull-core**, **skull-user-api** and **skull-project-management-scripts**, and there are 3 major concepts in _Skull_: **Workflow**, **Module** and **Service**. Before using it, let's understand the core concepts first.
 
 ### Module
-_Module_ is a independent logic set, it defines what kind of data/things we should use/do in this step.
+_Module_ is an independent logic set. It defines what kind of data/things we should use/do in this step.
 
 ### Workflow
-_Workflow_ is more like a *transaction rules*, *oriented automator* or *pipeline*, it controls how the transaction works, execute the modules one by one until be finished. Multiple modules can be chosen to join in a workflow, and there also can be multiple workflows in _Skull_.
-Each _Workflow_ has its own _SharedData_, every _Module_ belongs to this _Workflow_ can read/write it.
+_Workflow_ is more like a *transaction rule* *oriented automator* or *pipeline*. It controls how the transaction works,
+executes the modules one by one until they are finished. Multiple modules can be chosen to join in a workflow, and there also can be multiple workflows working simultaneously in _Skull_.
+Each _Workflow_ has its own _SharedData_, readable and writable by every _Module_ belongs to it.
 
 ### Service
-_Service_ is designed for managing the data, and provide a group of APIs to access the data. _Module_ can use these APIs to access/consume the data, then decide what you want to do. Also the _Service_ is shareable, it's highly recommended that user to share their _Service_ to other *skull projects*, to make the world better.
+_Service_ is designed for managing the data and it provides a group of APIs for modules to access the data. Also the _Service_ is reusable among different *skull projects*. it is highly recommended that user contribute their _Service_ to *skull projects* repository to enrich the *skull service* family.
 
 ## Releases
 [Changelog](ChangeLog.md)
@@ -126,7 +127,7 @@ After that, use service APIs defined in `skullcpp/service.h` from a module to co
 Service is designed for sharing, each service is built for one single purpose or solving a specific problem, share to others, help people to build their project easier than ever.
 
 ## How to Check Counters
-Currently, the [AdminModule][1] is a builtin module in _Skull_, just connect to port `7759`:
+Currently, the [AdminModule][1] is a built-in module in _Skull_, just connect to port `7759`:
 ```console
 final@ubuntu: ~>telnet 0 7759
 Trying 0.0.0.0...
